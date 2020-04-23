@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "contact_infos",
+  "info": {
+    "name": "contact info"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "portfoli": {
+      "via": "contact_info",
+      "model": "portfoli"
+    }
+  }
+}

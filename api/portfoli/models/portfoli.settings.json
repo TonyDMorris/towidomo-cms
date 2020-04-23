@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "portfolis",
+  "info": {
+    "name": "portfoli"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "bio": {
+      "model": "bio",
+      "via": "portfoli"
+    },
+    "articles": {
+      "collection": "article",
+      "via": "portfoli"
+    },
+    "cv": {
+      "model": "cv",
+      "via": "portfoli"
+    },
+    "contact_info": {
+      "model": "contact-info",
+      "via": "portfoli"
+    }
+  }
+}
