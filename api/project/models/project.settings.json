@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "projects",
+  "info": {
+    "name": "project"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "code_url": {
+      "type": "string"
+    },
+    "repo_url": {
+      "type": "string"
+    },
+    "portfoli": {
+      "via": "projects",
+      "model": "portfoli"
+    }
+  }
+}

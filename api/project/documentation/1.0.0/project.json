@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/portfolis": {
+    "/projects": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Portfoli"
+                    "$ref": "#/components/schemas/Project"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Project"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "$ref": "#/components/schemas/Project"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Project"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPortfoli"
+                "$ref": "#/components/schemas/NewProject"
               }
             }
           }
         }
       }
     },
-    "/portfolis/count": {
+    "/projects/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Project"
         ],
         "parameters": []
       }
     },
-    "/portfolis/{id}": {
+    "/projects/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "$ref": "#/components/schemas/Project"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Project"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "$ref": "#/components/schemas/Project"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Project"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPortfoli"
+                "$ref": "#/components/schemas/NewProject"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Project"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Portfoli": {
+      "Project": {
         "required": [
           "id"
         ],
@@ -522,10 +522,65 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
-          "bio": {
+          "description": {
+            "type": "string"
+          },
+          "image": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              }
+            }
+          },
+          "code_url": {
+            "type": "string"
+          },
+          "repo_url": {
+            "type": "string"
+          },
+          "portfoli": {
             "required": [
               "id"
             ],
@@ -533,115 +588,27 @@
               "id": {
                 "type": "string"
               },
-              "body": {
+              "name": {
                 "type": "string"
               },
-              "Images": {
+              "bio": {
+                "type": "string"
+              },
+              "articles": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "portfoli": {
-                "type": "string"
-              }
-            }
-          },
-          "articles": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "body": {
-                  "type": "string"
-                },
-                "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "image_descriptions": {
-                  "type": "string"
-                },
-                "portfoli": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "cv": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
               "cv": {
                 "type": "string"
               },
-              "portfoli": {
-                "type": "string"
-              }
-            }
-          },
-          "contact_info": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
+              "contact_info": {
                 "type": "string"
               },
-              "email": {
-                "type": "string"
-              },
-              "phone_number": {
-                "type": "string"
-              },
-              "linkedin": {
-                "type": "string"
-              },
-              "portfoli": {
-                "type": "string"
-              }
-            }
-          },
-          "projects": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "code_url": {
-                  "type": "string"
-                },
-                "repo_url": {
-                  "type": "string"
-                },
-                "portfoli": {
+              "projects": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
               }
@@ -649,31 +616,22 @@
           }
         }
       },
-      "NewPortfoli": {
+      "NewProject": {
         "properties": {
-          "name": {
+          "title": {
             "type": "string"
           },
-          "bio": {
+          "description": {
             "type": "string"
           },
-          "articles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "cv": {
+          "code_url": {
             "type": "string"
           },
-          "contact_info": {
+          "repo_url": {
             "type": "string"
           },
-          "projects": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "portfoli": {
+            "type": "string"
           }
         }
       }
@@ -681,7 +639,7 @@
   },
   "tags": [
     {
-      "name": "Portfoli"
+      "name": "Project"
     }
   ]
 }

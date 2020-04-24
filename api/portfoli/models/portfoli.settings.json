@@ -28,6 +28,10 @@
     "contact_info": {
       "model": "contact-info",
       "via": "portfoli"
+    },
+    "projects": {
+      "collection": "project",
+      "via": "portfoli"
     }
   }
 }

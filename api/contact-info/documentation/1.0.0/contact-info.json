@@ -569,6 +569,12 @@
               },
               "contact_info": {
                 "type": "string"
+              },
+              "projects": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
