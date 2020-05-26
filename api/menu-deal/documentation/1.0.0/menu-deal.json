@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/portfolis": {
+    "/menu-deals": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Portfoli"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Menu-deal"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Portfoli"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPortfoli"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/portfolis/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Menu-deal"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMenu-deal"
+              }
+            }
+          }
+        }
       }
     },
-    "/portfolis/{id}": {
+    "/menu-deals/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Menu-deal"
+        ],
+        "parameters": []
+      }
+    },
+    "/menu-deals/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Menu-deal"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Menu-deal"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPortfoli"
+                "$ref": "#/components/schemas/NewMenu-deal"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Menu-deal"
         ],
         "parameters": [
           {
@@ -514,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Portfoli": {
+      "Menu-deal": {
         "required": [
           "id"
         ],
@@ -525,29 +538,13 @@
           "name": {
             "type": "string"
           },
-          "bio": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "body": {
-                "type": "string"
-              },
-              "Images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "portfoli": {
-                "type": "string"
-              }
-            }
+          "description": {
+            "type": "string"
           },
-          "articles": {
+          "price": {
+            "type": "number"
+          },
+          "menu_deal_options": {
             "type": "array",
             "items": {
               "required": [
@@ -557,28 +554,22 @@
                 "id": {
                   "type": "string"
                 },
-                "title": {
+                "number_of_selections": {
+                  "type": "integer"
+                },
+                "food_items": {
                   "type": "string"
                 },
-                "body": {
+                "selection_text": {
                   "type": "string"
                 },
-                "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "image_descriptions": {
-                  "type": "string"
-                },
-                "portfoli": {
+                "menu_deal": {
                   "type": "string"
                 }
               }
             }
           },
-          "cv": {
+          "restaurant": {
             "required": [
               "id"
             ],
@@ -586,62 +577,42 @@
               "id": {
                 "type": "string"
               },
-              "cv": {
+              "name": {
                 "type": "string"
               },
-              "portfoli": {
+              "food": {
                 "type": "string"
-              }
-            }
-          },
-          "contact_info": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
+              },
+              "address1": {
+                "type": "string"
+              },
+              "address2": {
+                "type": "string"
+              },
+              "postcode": {
+                "type": "string"
+              },
+              "phone": {
                 "type": "string"
               },
               "email": {
                 "type": "string"
               },
-              "phone_number": {
+              "opening_times": {
                 "type": "string"
               },
-              "linkedin": {
+              "website": {
                 "type": "string"
               },
-              "portfoli": {
-                "type": "string"
-              }
-            }
-          },
-          "projects": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
+              "menu_categories": {
+                "type": "array",
+                "items": {
                   "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "repo_url": {
-                  "type": "string"
-                },
-                "portfoli": {
-                  "type": "string"
-                },
-                "production_url": {
+                }
+              },
+              "menu_deals": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
               }
@@ -649,39 +620,29 @@
           }
         }
       },
-      "NewPortfoli": {
+      "NewMenu-deal": {
         "properties": {
           "name": {
             "type": "string"
           },
-          "bio": {
+          "description": {
             "type": "string"
           },
-          "articles": {
+          "price": {
+            "type": "number"
+          },
+          "menu_deal_options": {
             "type": "array",
             "items": {
               "type": "string"
             }
           },
-          "cv": {
+          "restaurant": {
             "type": "string"
-          },
-          "contact_info": {
-            "type": "string"
-          },
-          "projects": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       }
     }
   },
-  "tags": [
-    {
-      "name": "Portfoli"
-    }
-  ]
+  "tags": []
 }

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/menu-deal-options",
+      "handler": "menu-deal-options.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/menu-deal-options/count",
+      "handler": "menu-deal-options.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/menu-deal-options/:id",
+      "handler": "menu-deal-options.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/menu-deal-options",
+      "handler": "menu-deal-options.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/menu-deal-options/:id",
+      "handler": "menu-deal-options.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/menu-deal-options/:id",
+      "handler": "menu-deal-options.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

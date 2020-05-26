@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/portfolis": {
+    "/menu-categories": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Portfoli"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Menu-category"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Portfoli"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPortfoli"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/portfolis/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Menu-category"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewMenu-category"
+              }
+            }
+          }
+        }
       }
     },
-    "/portfolis/{id}": {
+    "/menu-categories/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Menu-category"
+        ],
+        "parameters": []
+      }
+    },
+    "/menu-categories/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Menu-category"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Menu-category"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPortfoli"
+                "$ref": "#/components/schemas/NewMenu-category"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Menu-category"
         ],
         "parameters": [
           {
@@ -514,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Portfoli": {
+      "Menu-category": {
         "required": [
           "id"
         ],
@@ -525,7 +538,13 @@
           "name": {
             "type": "string"
           },
-          "bio": {
+          "description": {
+            "type": "string"
+          },
+          "page_order": {
+            "type": "integer"
+          },
+          "restaurant": {
             "required": [
               "id"
             ],
@@ -533,90 +552,48 @@
               "id": {
                 "type": "string"
               },
-              "body": {
+              "name": {
                 "type": "string"
               },
-              "Images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "portfoli": {
-                "type": "string"
-              }
-            }
-          },
-          "articles": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "body": {
-                  "type": "string"
-                },
-                "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "image_descriptions": {
-                  "type": "string"
-                },
-                "portfoli": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "cv": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
+              "food": {
                 "type": "string"
               },
-              "cv": {
+              "address1": {
                 "type": "string"
               },
-              "portfoli": {
+              "address2": {
                 "type": "string"
-              }
-            }
-          },
-          "contact_info": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
+              },
+              "postcode": {
+                "type": "string"
+              },
+              "phone": {
                 "type": "string"
               },
               "email": {
                 "type": "string"
               },
-              "phone_number": {
+              "opening_times": {
                 "type": "string"
               },
-              "linkedin": {
+              "website": {
                 "type": "string"
               },
-              "portfoli": {
-                "type": "string"
+              "menu_categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "menu_deals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
-          "projects": {
+          "food_items": {
             "type": "array",
             "items": {
               "required": [
@@ -626,50 +603,56 @@
                 "id": {
                   "type": "string"
                 },
-                "title": {
+                "name": {
                   "type": "string"
                 },
                 "description": {
                   "type": "string"
                 },
-                "image": {
-                  "type": "string"
+                "price": {
+                  "type": "number"
                 },
-                "repo_url": {
-                  "type": "string"
+                "vegan": {
+                  "type": "boolean"
                 },
-                "portfoli": {
-                  "type": "string"
+                "vegetarian": {
+                  "type": "boolean"
                 },
-                "production_url": {
-                  "type": "string"
+                "gluten_free": {
+                  "type": "boolean"
+                },
+                "dairy_free": {
+                  "type": "boolean"
+                },
+                "vegan_option": {
+                  "type": "boolean"
+                },
+                "menu_categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }
           }
         }
       },
-      "NewPortfoli": {
+      "NewMenu-category": {
         "properties": {
           "name": {
             "type": "string"
           },
-          "bio": {
+          "description": {
             "type": "string"
           },
-          "articles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "page_order": {
+            "type": "integer"
           },
-          "cv": {
+          "restaurant": {
             "type": "string"
           },
-          "contact_info": {
-            "type": "string"
-          },
-          "projects": {
+          "food_items": {
             "type": "array",
             "items": {
               "type": "string"
@@ -679,9 +662,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Portfoli"
-    }
-  ]
+  "tags": []
 }

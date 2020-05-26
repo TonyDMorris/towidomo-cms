@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "food_items",
+  "info": {
+    "name": "food_item"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "decimal",
+      "default": 100
+    },
+    "vegan": {
+      "type": "boolean"
+    },
+    "vegetarian": {
+      "type": "boolean"
+    },
+    "gluten_free": {
+      "type": "boolean"
+    },
+    "dairy_free": {
+      "type": "boolean"
+    },
+    "vegan_option": {
+      "type": "boolean"
+    },
+    "menu_categories": {
+      "via": "food_items",
+      "collection": "menu-category"
+    }
+  }
+}

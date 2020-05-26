@@ -30,8 +30,8 @@
       "via": "portfoli"
     },
     "projects": {
-      "collection": "project",
-      "via": "portfoli"
+      "via": "portfoli",
+      "collection": "project"
     }
   }
 }

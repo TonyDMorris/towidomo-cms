@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/portfolis": {
+    "/restaurants": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Portfoli"
+                    "$ref": "#/components/schemas/Restaurant"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Restaurant"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "$ref": "#/components/schemas/Restaurant"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Restaurant"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPortfoli"
+                "$ref": "#/components/schemas/NewRestaurant"
               }
             }
           }
         }
       }
     },
-    "/portfolis/count": {
+    "/restaurants/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Restaurant"
         ],
         "parameters": []
       }
     },
-    "/portfolis/{id}": {
+    "/restaurants/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "$ref": "#/components/schemas/Restaurant"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Restaurant"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "$ref": "#/components/schemas/Restaurant"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Restaurant"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPortfoli"
+                "$ref": "#/components/schemas/NewRestaurant"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Restaurant"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Portfoli": {
+      "Restaurant": {
         "required": [
           "id"
         ],
@@ -525,29 +525,31 @@
           "name": {
             "type": "string"
           },
-          "bio": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "body": {
-                "type": "string"
-              },
-              "Images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "portfoli": {
-                "type": "string"
-              }
-            }
+          "food": {
+            "type": "string"
           },
-          "articles": {
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "postcode": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "opening_times": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "menu_categories": {
             "type": "array",
             "items": {
               "required": [
@@ -557,91 +559,53 @@
                 "id": {
                   "type": "string"
                 },
-                "title": {
-                  "type": "string"
-                },
-                "body": {
-                  "type": "string"
-                },
-                "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "image_descriptions": {
-                  "type": "string"
-                },
-                "portfoli": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "cv": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "cv": {
-                "type": "string"
-              },
-              "portfoli": {
-                "type": "string"
-              }
-            }
-          },
-          "contact_info": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "phone_number": {
-                "type": "string"
-              },
-              "linkedin": {
-                "type": "string"
-              },
-              "portfoli": {
-                "type": "string"
-              }
-            }
-          },
-          "projects": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
+                "name": {
                   "type": "string"
                 },
                 "description": {
                   "type": "string"
                 },
-                "image": {
+                "page_order": {
+                  "type": "integer"
+                },
+                "restaurant": {
                   "type": "string"
                 },
-                "repo_url": {
+                "food_items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "menu_deals": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
                   "type": "string"
                 },
-                "portfoli": {
+                "name": {
                   "type": "string"
                 },
-                "production_url": {
+                "description": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "menu_deal_options": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "restaurant": {
                   "type": "string"
                 }
               }
@@ -649,27 +613,42 @@
           }
         }
       },
-      "NewPortfoli": {
+      "NewRestaurant": {
         "properties": {
           "name": {
             "type": "string"
           },
-          "bio": {
+          "food": {
             "type": "string"
           },
-          "articles": {
+          "address1": {
+            "type": "string"
+          },
+          "address2": {
+            "type": "string"
+          },
+          "postcode": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "opening_times": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "menu_categories": {
             "type": "array",
             "items": {
               "type": "string"
             }
           },
-          "cv": {
-            "type": "string"
-          },
-          "contact_info": {
-            "type": "string"
-          },
-          "projects": {
+          "menu_deals": {
             "type": "array",
             "items": {
               "type": "string"
@@ -681,7 +660,7 @@
   },
   "tags": [
     {
-      "name": "Portfoli"
+      "name": "Restaurant"
     }
   ]
 }

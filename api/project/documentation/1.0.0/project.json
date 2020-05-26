@@ -574,9 +574,6 @@
               }
             }
           },
-          "code_url": {
-            "type": "string"
-          },
           "repo_url": {
             "type": "string"
           },
@@ -613,6 +610,9 @@
                 }
               }
             }
+          },
+          "production_url": {
+            "type": "string"
           }
         }
       },
@@ -624,13 +624,13 @@
           "description": {
             "type": "string"
           },
-          "code_url": {
-            "type": "string"
-          },
           "repo_url": {
             "type": "string"
           },
           "portfoli": {
+            "type": "string"
+          },
+          "production_url": {
             "type": "string"
           }
         }

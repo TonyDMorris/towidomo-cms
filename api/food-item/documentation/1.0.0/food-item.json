@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/portfolis": {
+    "/food-items": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Portfoli"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Food-item"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Portfoli"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPortfoli"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/portfolis/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Food-item"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewFood-item"
+              }
+            }
+          }
+        }
       }
     },
-    "/portfolis/{id}": {
+    "/food-items/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Food-item"
+        ],
+        "parameters": []
+      }
+    },
+    "/food-items/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Food-item"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Portfoli"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Food-item"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPortfoli"
+                "$ref": "#/components/schemas/NewFood-item"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Portfoli"
+          "Food-item"
         ],
         "parameters": [
           {
@@ -514,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Portfoli": {
+      "Food-item": {
         "required": [
           "id"
         ],
@@ -525,29 +538,29 @@
           "name": {
             "type": "string"
           },
-          "bio": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "body": {
-                "type": "string"
-              },
-              "Images": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "portfoli": {
-                "type": "string"
-              }
-            }
+          "description": {
+            "type": "string"
           },
-          "articles": {
+          "price": {
+            "type": "number",
+            "default": 100
+          },
+          "vegan": {
+            "type": "boolean"
+          },
+          "vegetarian": {
+            "type": "boolean"
+          },
+          "gluten_free": {
+            "type": "boolean"
+          },
+          "dairy_free": {
+            "type": "boolean"
+          },
+          "vegan_option": {
+            "type": "boolean"
+          },
+          "menu_categories": {
             "type": "array",
             "items": {
               "required": [
@@ -557,119 +570,57 @@
                 "id": {
                   "type": "string"
                 },
-                "title": {
-                  "type": "string"
-                },
-                "body": {
-                  "type": "string"
-                },
-                "images": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "image_descriptions": {
-                  "type": "string"
-                },
-                "portfoli": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "cv": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "cv": {
-                "type": "string"
-              },
-              "portfoli": {
-                "type": "string"
-              }
-            }
-          },
-          "contact_info": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "phone_number": {
-                "type": "string"
-              },
-              "linkedin": {
-                "type": "string"
-              },
-              "portfoli": {
-                "type": "string"
-              }
-            }
-          },
-          "projects": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
+                "name": {
                   "type": "string"
                 },
                 "description": {
                   "type": "string"
                 },
-                "image": {
+                "page_order": {
+                  "type": "integer"
+                },
+                "restaurant": {
                   "type": "string"
                 },
-                "repo_url": {
-                  "type": "string"
-                },
-                "portfoli": {
-                  "type": "string"
-                },
-                "production_url": {
-                  "type": "string"
+                "food_items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }
           }
         }
       },
-      "NewPortfoli": {
+      "NewFood-item": {
         "properties": {
           "name": {
             "type": "string"
           },
-          "bio": {
+          "description": {
             "type": "string"
           },
-          "articles": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "price": {
+            "type": "number",
+            "default": 100
           },
-          "cv": {
-            "type": "string"
+          "vegan": {
+            "type": "boolean"
           },
-          "contact_info": {
-            "type": "string"
+          "vegetarian": {
+            "type": "boolean"
           },
-          "projects": {
+          "gluten_free": {
+            "type": "boolean"
+          },
+          "dairy_free": {
+            "type": "boolean"
+          },
+          "vegan_option": {
+            "type": "boolean"
+          },
+          "menu_categories": {
             "type": "array",
             "items": {
               "type": "string"
@@ -679,9 +630,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Portfoli"
-    }
-  ]
+  "tags": []
 }

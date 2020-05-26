@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "menu_deal_options",
+  "info": {
+    "name": "menu_deal_options"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "number_of_selections": {
+      "type": "integer"
+    },
+    "food_items": {
+      "collection": "food-item"
+    },
+    "selection_text": {
+      "type": "richtext"
+    },
+    "menu_deal": {
+      "model": "menu-deal",
+      "via": "menu_deal_options"
+    }
+  }
+}

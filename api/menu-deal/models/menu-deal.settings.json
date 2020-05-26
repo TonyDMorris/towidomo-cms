@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "menu_deals",
+  "info": {
+    "name": "menu_deal"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "menu_deal_options": {
+      "via": "menu_deal",
+      "collection": "menu-deal-options"
+    },
+    "restaurant": {
+      "via": "menu_deals",
+      "model": "restaurant"
+    }
+  }
+}

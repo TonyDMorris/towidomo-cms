@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "restaurants",
+  "info": {
+    "name": "restaurant"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "food": {
+      "type": "string"
+    },
+    "address1": {
+      "type": "string"
+    },
+    "address2": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "opening_times": {
+      "type": "richtext"
+    },
+    "website": {
+      "type": "string"
+    },
+    "menu_categories": {
+      "via": "restaurant",
+      "collection": "menu-category"
+    },
+    "menu_deals": {
+      "collection": "menu-deal",
+      "via": "restaurant"
+    }
+  }
+}

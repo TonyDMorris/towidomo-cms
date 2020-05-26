@@ -22,15 +22,15 @@
       "plugin": "upload",
       "required": false
     },
-    "code_url": {
-      "type": "string"
-    },
     "repo_url": {
       "type": "string"
     },
     "portfoli": {
-      "via": "projects",
-      "model": "portfoli"
+      "model": "portfoli",
+      "via": "projects"
+    },
+    "production_url": {
+      "type": "string"
     }
   }
 }
