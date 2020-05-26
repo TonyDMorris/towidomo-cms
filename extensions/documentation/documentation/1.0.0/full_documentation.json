@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "05/26/2020 9:11:09 AM"
+    "x-generation-date": "05/26/2020 8:27:00 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -8339,6 +8339,12 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "menu_deals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -8437,12 +8443,6 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "menu_deals": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
               }
             }
           },
@@ -8488,6 +8488,40 @@
                 }
               }
             }
+          },
+          "menu_deals": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "menu_deal_options": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "menu_categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -8506,6 +8540,12 @@
             "type": "string"
           },
           "food_items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "menu_deals": {
             "type": "array",
             "items": {
               "type": "string"
@@ -8590,8 +8630,11 @@
                   "type": "string"
                 }
               },
-              "restaurant": {
-                "type": "string"
+              "menu_categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -8655,51 +8698,39 @@
               }
             }
           },
-          "restaurant": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "food": {
-                "type": "string"
-              },
-              "address1": {
-                "type": "string"
-              },
-              "address2": {
-                "type": "string"
-              },
-              "postcode": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "opening_times": {
-                "type": "string"
-              },
-              "website": {
-                "type": "string"
-              },
-              "menu_categories": {
-                "type": "array",
-                "items": {
+          "menu_categories": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
                   "type": "string"
-                }
-              },
-              "menu_deals": {
-                "type": "array",
-                "items": {
+                },
+                "name": {
                   "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "page_order": {
+                  "type": "integer"
+                },
+                "restaurant": {
+                  "type": "string"
+                },
+                "food_items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "menu_deals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }
@@ -8723,8 +8754,11 @@
               "type": "string"
             }
           },
-          "restaurant": {
-            "type": "string"
+          "menu_categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -9074,37 +9108,12 @@
                   "items": {
                     "type": "string"
                   }
-                }
-              }
-            }
-          },
-          "menu_deals": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
                 },
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "menu_deal_options": {
+                "menu_deals": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
-                },
-                "restaurant": {
-                  "type": "string"
                 }
               }
             }
@@ -9141,12 +9150,6 @@
             "type": "string"
           },
           "menu_categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "menu_deals": {
             "type": "array",
             "items": {
               "type": "string"

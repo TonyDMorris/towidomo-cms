@@ -20,8 +20,8 @@
       "type": "richtext"
     },
     "menu_deal": {
-      "model": "menu-deal",
-      "via": "menu_deal_options"
+      "via": "menu_deal_options",
+      "model": "menu-deal"
     }
   }
 }

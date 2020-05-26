@@ -604,8 +604,11 @@
                   "type": "string"
                 }
               },
-              "restaurant": {
-                "type": "string"
+              "menu_categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }

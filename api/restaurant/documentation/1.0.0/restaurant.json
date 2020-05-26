@@ -576,37 +576,12 @@
                   "items": {
                     "type": "string"
                   }
-                }
-              }
-            }
-          },
-          "menu_deals": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
                 },
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "menu_deal_options": {
+                "menu_deals": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
-                },
-                "restaurant": {
-                  "type": "string"
                 }
               }
             }
@@ -643,12 +618,6 @@
             "type": "string"
           },
           "menu_categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "menu_deals": {
             "type": "array",
             "items": {
               "type": "string"

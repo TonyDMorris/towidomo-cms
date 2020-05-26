@@ -20,12 +20,12 @@
       "type": "decimal"
     },
     "menu_deal_options": {
-      "via": "menu_deal",
-      "collection": "menu-deal-options"
+      "collection": "menu-deal-options",
+      "via": "menu_deal"
     },
-    "restaurant": {
+    "menu_categories": {
       "via": "menu_deals",
-      "model": "restaurant"
+      "collection": "menu-category"
     }
   }
 }

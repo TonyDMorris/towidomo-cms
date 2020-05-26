@@ -40,10 +40,6 @@
     "menu_categories": {
       "via": "restaurant",
       "collection": "menu-category"
-    },
-    "menu_deals": {
-      "collection": "menu-deal",
-      "via": "restaurant"
     }
   }
 }
