@@ -6,20 +6,9 @@
  */
 
 module.exports = {
-  find: (ctx) => {
-    return strapi.query("restaurant").find(ctx.query, [
-      {
-        path: "menu_categories",
-        populate: {
-          path: "food_items",
-        },
-      },
-      {
-        path: "menu_deals",
-        populate: {
-          path: "menu_deal_options",
-        },
-      },
+  findOne: (ctx) => {
+    return strapi.query("restaurant").find(ctx.query, ["menu_categories.food_items", "menu_deals.menu_deal_options.food_items"
+
     ]);
   },
 };
