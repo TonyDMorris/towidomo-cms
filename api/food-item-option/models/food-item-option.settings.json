@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "food_item_options",
+  "info": {
+    "name": "food_item_option"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "additional_charge": {
+      "type": "decimal",
+      "default": 0
+    },
+    "food_items": {
+      "via": "food_item_options",
+      "collection": "food-item"
+    }
+  }
+}

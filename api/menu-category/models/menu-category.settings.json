@@ -24,8 +24,8 @@
       "via": "menu_categories"
     },
     "food_items": {
-      "collection": "food-item",
       "via": "menu_categories",
+      "collection": "food-item",
       "dominant": true
     },
     "menu_deals": {

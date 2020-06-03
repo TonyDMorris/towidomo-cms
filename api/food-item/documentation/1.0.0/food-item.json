@@ -596,6 +596,34 @@
                 }
               }
             }
+          },
+          "food_item_options": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "additional_charge": {
+                  "type": "number"
+                },
+                "food_items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -627,6 +655,12 @@
             "type": "boolean"
           },
           "menu_categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "food_item_options": {
             "type": "array",
             "items": {
               "type": "string"

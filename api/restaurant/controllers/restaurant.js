@@ -7,7 +7,7 @@
 
 module.exports = {
   findOne: (ctx) => {
-    return strapi.query("restaurant").find(ctx.query, ["menu_categories.food_items", "menu_categories.menu_deals.menu_deal_options.food_items"
+    return strapi.query("restaurant").find(ctx.query, ["menu_categories.food_items.food_item_options", "menu_categories.menu_deals.menu_deal_options.food_items"
 
     ]);
   },

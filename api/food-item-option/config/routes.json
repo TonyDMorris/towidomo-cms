@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/food-item-options",
+      "handler": "food-item-option.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/food-item-options/count",
+      "handler": "food-item-option.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/food-item-options/:id",
+      "handler": "food-item-option.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/food-item-options",
+      "handler": "food-item-option.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/food-item-options/:id",
+      "handler": "food-item-option.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/food-item-options/:id",
+      "handler": "food-item-option.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

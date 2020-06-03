@@ -575,6 +575,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "food_item_options": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },

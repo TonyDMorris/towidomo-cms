@@ -36,8 +36,13 @@
       "type": "boolean"
     },
     "menu_categories": {
+      "collection": "menu-category",
+      "via": "food_items"
+    },
+    "food_item_options": {
+      "collection": "food-item-option",
       "via": "food_items",
-      "collection": "menu-category"
+      "dominant": true
     }
   }
 }

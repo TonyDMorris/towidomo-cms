@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/menu-categories": {
+    "/food-item-options": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-category"
+          "Food-item-option"
         ],
         "parameters": [
           {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-category"
+          "Food-item-option"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +252,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMenu-category"
+                "$ref": "#/components/schemas/NewFood-item-option"
               }
             }
           }
         }
       }
     },
-    "/menu-categories/count": {
+    "/food-item-options/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -311,12 +311,12 @@
         },
         "summary": "",
         "tags": [
-          "Menu-category"
+          "Food-item-option"
         ],
         "parameters": []
       }
     },
-    "/menu-categories/{id}": {
+    "/food-item-options/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -368,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-category"
+          "Food-item-option"
         ],
         "parameters": [
           {
@@ -434,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-category"
+          "Food-item-option"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMenu-category"
+                "$ref": "#/components/schemas/NewFood-item-option"
               }
             }
           }
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Menu-category"
+          "Food-item-option"
         ],
         "parameters": [
           {
@@ -527,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Menu-category": {
+      "Food-item-option": {
         "required": [
           "id"
         ],
@@ -535,57 +535,15 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
           "description": {
             "type": "string"
           },
-          "page_order": {
-            "type": "integer"
-          },
-          "restaurant": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "food": {
-                "type": "string"
-              },
-              "address1": {
-                "type": "string"
-              },
-              "address2": {
-                "type": "string"
-              },
-              "postcode": {
-                "type": "string"
-              },
-              "phone": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "opening_times": {
-                "type": "string"
-              },
-              "website": {
-                "type": "string"
-              },
-              "menu_categories": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
+          "additional_charge": {
+            "type": "number",
+            "default": 0
           },
           "food_items": {
             "type": "array",
@@ -635,64 +593,22 @@
                 }
               }
             }
-          },
-          "menu_deals": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "menu_deal_options": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "menu_categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
           }
         }
       },
-      "NewMenu-category": {
+      "NewFood-item-option": {
         "properties": {
-          "name": {
+          "title": {
             "type": "string"
           },
           "description": {
             "type": "string"
           },
-          "page_order": {
-            "type": "integer"
-          },
-          "restaurant": {
-            "type": "string"
+          "additional_charge": {
+            "type": "number",
+            "default": 0
           },
           "food_items": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "menu_deals": {
             "type": "array",
             "items": {
               "type": "string"
