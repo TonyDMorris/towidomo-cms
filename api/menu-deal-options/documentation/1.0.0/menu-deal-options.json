@@ -581,6 +581,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "food_item_options_minimum_selection": {
+                "type": "integer"
+              },
+              "food_item_options_maximum_selection": {
+                "type": "integer"
               }
             }
           },

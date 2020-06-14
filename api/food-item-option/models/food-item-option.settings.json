@@ -21,8 +21,12 @@
       "default": 0
     },
     "food_items": {
-      "via": "food_item_options",
-      "collection": "food-item"
+      "collection": "food-item",
+      "via": "food_item_options"
+    },
+    "max_permitted": {
+      "type": "integer",
+      "default": 1
     }
   }
 }

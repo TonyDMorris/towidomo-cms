@@ -40,9 +40,15 @@
       "via": "food_items"
     },
     "food_item_options": {
-      "collection": "food-item-option",
       "via": "food_items",
+      "collection": "food-item-option",
       "dominant": true
+    },
+    "food_item_options_minimum_selection": {
+      "type": "integer"
+    },
+    "food_item_options_maximum_selection": {
+      "type": "integer"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/03/2020 3:51:40 PM"
+    "x-generation-date": "06/14/2020 5:30:00 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -8866,9 +8866,19 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "food_item_options_minimum_selection": {
+                  "type": "integer"
+                },
+                "food_item_options_maximum_selection": {
+                  "type": "integer"
                 }
               }
             }
+          },
+          "max_permitted": {
+            "type": "integer",
+            "default": 1
           }
         }
       },
@@ -8889,6 +8899,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "max_permitted": {
+            "type": "integer",
+            "default": 1
           }
         }
       },
@@ -8986,9 +9000,18 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "max_permitted": {
+                  "type": "integer"
                 }
               }
             }
+          },
+          "food_item_options_minimum_selection": {
+            "type": "integer"
+          },
+          "food_item_options_maximum_selection": {
+            "type": "integer"
           }
         }
       },
@@ -9030,6 +9053,12 @@
             "items": {
               "type": "string"
             }
+          },
+          "food_item_options_minimum_selection": {
+            "type": "integer"
+          },
+          "food_item_options_maximum_selection": {
+            "type": "integer"
           }
         }
       },
@@ -9138,6 +9167,12 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "food_item_options_minimum_selection": {
+                  "type": "integer"
+                },
+                "food_item_options_maximum_selection": {
+                  "type": "integer"
                 }
               }
             }
@@ -9260,6 +9295,12 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "food_item_options_minimum_selection": {
+                "type": "integer"
+              },
+              "food_item_options_maximum_selection": {
+                "type": "integer"
               }
             }
           },
