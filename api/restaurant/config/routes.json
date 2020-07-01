@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/restaurants/payment/:id",
+      "handler": "restaurant.findOneWithPayment",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/restaurants/count",
       "handler": "restaurant.count",
       "config": {
