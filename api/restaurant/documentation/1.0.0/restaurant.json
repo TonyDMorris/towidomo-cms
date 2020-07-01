@@ -585,6 +585,25 @@
                 }
               }
             }
+          },
+          "payment_credential": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "publishable_key": {
+                "type": "string"
+              },
+              "private_key": {
+                "type": "string"
+              },
+              "restaurant": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -622,6 +641,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "payment_credential": {
+            "type": "string"
           }
         }
       }

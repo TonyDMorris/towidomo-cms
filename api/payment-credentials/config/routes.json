@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/payment-credentials",
+      "handler": "payment-credentials.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payment-credentials/count",
+      "handler": "payment-credentials.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payment-credentials/:id",
+      "handler": "payment-credentials.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payment-credentials",
+      "handler": "payment-credentials.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/payment-credentials/:id",
+      "handler": "payment-credentials.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payment-credentials/:id",
+      "handler": "payment-credentials.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

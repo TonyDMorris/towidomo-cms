@@ -20,8 +20,8 @@
       "type": "integer"
     },
     "restaurant": {
-      "model": "restaurant",
-      "via": "menu_categories"
+      "via": "menu_categories",
+      "model": "restaurant"
     },
     "food_items": {
       "via": "menu_categories",

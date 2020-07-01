@@ -584,6 +584,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "payment_credential": {
+                "type": "string"
               }
             }
           },
@@ -638,6 +641,9 @@
                 },
                 "food_item_options_maximum_selection": {
                   "type": "integer"
+                },
+                "extras": {
+                  "type": "string"
                 }
               }
             }

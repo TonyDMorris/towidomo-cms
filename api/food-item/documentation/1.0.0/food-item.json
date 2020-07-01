@@ -633,6 +633,34 @@
           },
           "food_item_options_maximum_selection": {
             "type": "integer"
+          },
+          "extras": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "additional_charge": {
+                "type": "number"
+              },
+              "food_items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "max_permitted": {
+                "type": "integer"
+              }
+            }
           }
         }
       },
@@ -680,6 +708,9 @@
           },
           "food_item_options_maximum_selection": {
             "type": "integer"
+          },
+          "extras": {
+            "type": "string"
           }
         }
       }

@@ -587,6 +587,9 @@
               },
               "food_item_options_maximum_selection": {
                 "type": "integer"
+              },
+              "extras": {
+                "type": "string"
               }
             }
           },

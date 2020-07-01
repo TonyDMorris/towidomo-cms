@@ -38,8 +38,12 @@
       "type": "string"
     },
     "menu_categories": {
-      "via": "restaurant",
-      "collection": "menu-category"
+      "collection": "menu-category",
+      "via": "restaurant"
+    },
+    "payment_credential": {
+      "model": "payment-credentials",
+      "via": "restaurant"
     }
   }
 }
